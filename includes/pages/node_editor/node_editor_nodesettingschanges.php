@@ -24,7 +24,7 @@ class node_editor_nodesettingschanges {
 		
 	}
 	
-	function node_editor_nodesettingschanges() {
+	function __construct() {
 		
 	}
 	

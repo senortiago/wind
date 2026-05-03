@@ -2,7 +2,7 @@
 /*
  * WiND - Wireless Nodes Database
  *
- * Copyright (C) 2005-2014 	by WiND Contributors (see AUTHORS.txt)
+ * Copyright (C) 2005-2014      by WiND Contributors (see AUTHORS.txt)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
@@ -18,21 +18,21 @@
  */
 
 class search_suggest_js {
-	
-	var $tpl;
+        
+        var $tpl;
 
-	function search_suggest_js() {
-		
-	}
-	
-	function output() {
+        function __construct() {
+                
+        }
+        
+        function output() {
 
-		$this->tpl['suggest_url'] = make_ref('/search/suggest');
-		header('Content-Type: text/javascript');
-		
-		echo template($this->tpl, __FILE__);
-		exit;
-	}
+                $this->tpl['suggest_url'] = make_ref('/search/suggest');
+                header('Content-Type: text/javascript');
+                
+                echo template($this->tpl, __FILE__);
+                exit;
+        }
 
 }
 

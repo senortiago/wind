@@ -2,7 +2,7 @@
 /*
  * WiND - Wireless Nodes Database
  *
- * Copyright (C) 2005-2014 	by WiND Contributors (see AUTHORS.txt)
+ * Copyright (C) 2005-2014      by WiND Contributors (see AUTHORS.txt)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
@@ -22,25 +22,25 @@ else include_once(ROOT_PATH."includes/pages/ranges/ranges_search.php");
 
 class ranges {
 
-	var $tpl;
-	var $page;
-	
-	function ranges() {
-		if (get('subpage') != '') {
-			$p = "ranges_".get('subpage');
-			$this->page = new $p;
-		}
-		else $this->page = new ranges_search;
-	}
-	
-	function output() {
-		global $main, $lang;
-		$menu_addr = $main->menu->main_menu->getRootEntry()->getChild('addresses');
-		$menu_addr->createLink($lang['ip_ranges_search'], make_ref('/ranges/search'));
-		$menu_addr->createLink($lang['ip_ranges_allocation'], make_ref('/ranges/allocation'));
-		
-		return $this->page->output();
-	}
+        var $tpl;
+        var $page;
+        
+        function __construct() {
+                if (get('subpage') != '') {
+                        $p = "ranges_".get('subpage');
+                        $this->page = new $p;
+                }
+                else $this->page = new ranges_search;
+        }
+        
+        function output() {
+                global $main, $lang;
+                $menu_addr = $main->menu->main_menu->getRootEntry()->getChild('addresses');
+                $menu_addr->createLink($lang['ip_ranges_search'], make_ref('/ranges/search'));
+                $menu_addr->createLink($lang['ip_ranges_allocation'], make_ref('/ranges/allocation'));
+                
+                return $this->page->output();
+        }
 
 }
 

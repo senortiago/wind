@@ -2,7 +2,7 @@
 /*
  * WiND - Wireless Nodes Database
  *
- * Copyright (C) 2005-2014 	by WiND Contributors (see AUTHORS.txt)
+ * Copyright (C) 2005-2014      by WiND Contributors (see AUTHORS.txt)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
@@ -18,29 +18,29 @@
  */
 
 if (get('subpage') != '') {
-	include_once(ROOT_PATH."includes/pages/search/search_".get('subpage').".php");
+        include_once(ROOT_PATH."includes/pages/search/search_".get('subpage').".php");
 } else {
-	include_once(ROOT_PATH."includes/pages/search/search_query.php");
+        include_once(ROOT_PATH."includes/pages/search/search_query.php");
 }
 
 
 class search {
 
-	var $tpl;
-	var $page;
-	
-	function search() {
-		if (get('subpage') != '') {
-			$p = "search_".get('subpage');
-			$this->page = new $p;
-		} else {
-			$this->page = new search_query;
-		}
-	}
-	
-	function output() {
-		return $this->page->output();
-	}
+        var $tpl;
+        var $page;
+        
+        function __construct() {
+                if (get('subpage') != '') {
+                        $p = "search_".get('subpage');
+                        $this->page = new $p;
+                } else {
+                        $this->page = new search_query;
+                }
+        }
+        
+        function output() {
+                return $this->page->output();
+        }
 
 }
 

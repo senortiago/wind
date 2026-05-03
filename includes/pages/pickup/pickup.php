@@ -2,7 +2,7 @@
 /*
  * WiND - Wireless Nodes Database
  *
- * Copyright (C) 2005-2014 	by WiND Contributors (see AUTHORS.txt)
+ * Copyright (C) 2005-2014      by WiND Contributors (see AUTHORS.txt)
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
@@ -21,19 +21,19 @@ if (get('subpage') != '') include_once(ROOT_PATH."includes/pages/pickup/pickup_"
 
 class pickup {
 
-	var $tpl;
-	var $page;
-	
-	function pickup() {
-		if (get('subpage') != '') {
-			$p = "pickup_".get('subpage');
-			$this->page = new $p;
-		}
-	}
-	
-	function output() {
-		return $this->page->output();
-	}
+        var $tpl;
+        var $page;
+        
+        function __construct() {
+                if (get('subpage') != '') {
+                        $p = "pickup_".get('subpage');
+                        $this->page = new $p;
+                }
+        }
+        
+        function output() {
+                return $this->page->output();
+        }
 
 }
 
